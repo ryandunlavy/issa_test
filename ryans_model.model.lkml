@@ -1,5 +1,22 @@
 connection: "thelook"
 #really testing
+
+explore: current_timestamp {
+  persist_for: "0 minutes"
+}
+
+
+view: current_timestamp {
+  derived_table: {
+    sql: SELECT CURRENT_TIMESTAMP as time;;
+  }
+
+  dimension: time {
+    type: date_time
+    sql: ${TABLE}.time ;;
+  }
+}
+
 #
 # # include all the views
 # include: "*.view"
