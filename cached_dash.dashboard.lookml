@@ -4,7 +4,7 @@
   load_configuration: prefetch_cache_run
   elements:
   - name: Test look
-    title: Test look
+    title: 'test'
     model: ryans_model
     explore: order_items
     type: table
@@ -61,3 +61,4 @@
       num_rows: 0
     series_labels:
       order_items.order_id: Other label
+    title_hidden: true

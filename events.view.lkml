@@ -1,5 +1,7 @@
 view: events {
-  sql_table_name: demo_db.events ;;
+   # sql_table_name: {% if events.id._model._name == "ryans_model" %} demo_db.orders {% else %} other_schema.orders {% endif %};;
+    sql_table_name:{% if _model._name == 'ryans_model' %} worked {% else %} didnt_work {% endif %} ;;
+
 
   dimension: id {
     primary_key: yes
@@ -36,6 +38,9 @@ view: events {
     type: string
     sql: ${TABLE}.value ;;
   }
+
+
+
 
   measure: count {
     type: count
